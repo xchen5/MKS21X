@@ -1,0 +1,10 @@
+"git status" checks if the repository is up to date.
+"git add" adds the file to commit
+"git commit -m -a" -m adds the message -a adds all the files
+"git push" pushes it to the git server
+"git config --list" lists all the git configs
+"git config --global core.editor emacs" sets emacs as the default text editor
+"git config --global user.email "email"" adds email
+"git config --global usern.name ""name"" adds name
+"git pull" pulls and makes the repository in your local machine up to date
+
