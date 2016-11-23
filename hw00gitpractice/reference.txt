@@ -7,4 +7,8 @@
 "git config --global user.email "email"" adds email
 "git config --global usern.name ""name"" adds name
 "git pull" pulls and makes the repository in your local machine up to date
-
+"git log --oneline" shows the list of all commits with codes of the commit
+"git checkout <code>" reverts your local machine back to that previous commit, detaches head
+"git checkout <code> <filename>" reverts the file back to that commit
+"git checkout master" changes to the master branch
+"git checkout HEAD <filename>" what you do if you decide not to keep the old version and go back to the recent version
