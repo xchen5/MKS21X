@@ -12,7 +12,7 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
     public void setCall(String call){
 	callNumber = call;
     }
-    
+
     public abstract void checkout(String patron, String due);
     public abstract void returned();
     public abstract String circulationStatus();
@@ -28,6 +28,6 @@ public abstract class LibraryBook extends Book implements Comparable<LibraryBook
 	}
     }
     public String toString() {
-	super.toString() + ", " + circulationStatus() + ", " +  getCall();
+	     return super.toString() + ", "  + getCall() + ", " + circulationStatus();
     }
 }
