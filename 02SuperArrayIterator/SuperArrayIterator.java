@@ -1,3 +1,4 @@
+import java.util.*;
 public class SuperArrayIterator implements Iterator<String> {
     private SuperArray ary;
     private int element;
@@ -15,8 +16,8 @@ public class SuperArrayIterator implements Iterator<String> {
     }
     public String next(){
 	if (hasNext()) {
-	    element += 1
-	    return ary.get(element + 1);
+	    element += 1;
+	    return ary.get(element - 1);
 	}
 	else {
 	    throw new NoSuchElementException();
