@@ -14,7 +14,7 @@ public class Barcode{
       }
       else {
 	  _zip = zip;
-	  _checkDigit = sumDigits(Integer.parseInt(zip)) % 10;
+	  _checkDigit = checkSum(zip);
       }
   }
   public int getDigit(){
@@ -23,8 +23,9 @@ public class Barcode{
   public String getZip(){
     return _zip;
   }
-
-    private int sumDigits(int num){
+    
+   
+    private static int sumDigits(int num){
 	int sum = 0;
 	while (num > 0) {
             sum = sum + num % 10;
@@ -33,8 +34,11 @@ public class Barcode{
 	return sum;
     }
 
+    private static int checkSum(String zipcode) {
+	return sumDigits(Integer.parseInt(zipcode)) % 10;
+    }
 
-    private String toConvert(String input){
+    private static String toConvert(String input){
 	if (input.equals("0")){
 	    return "||:::";
 	}
@@ -84,7 +88,7 @@ public class Barcode{
     for(int i =0; i < _zip.length(); i++) {
       xD += toConvert(String.valueOf(_zip.charAt(i)));
     }
-    return "||" + xD + toConvert(Integer.toString(_checkDigit)) + "||";
+    return getZip() + " ||" + xD + toConvert(Integer.toString(_checkDigit)) + "||";
   }
 
 
@@ -103,10 +107,23 @@ public class Barcode{
     }
   }
 
+    public static String toCode(String zipcode){
+	String returnThis = "";
+    for(int i =0; i < zipcode.length(); i++) {
+	returnThis += toConvert(String.valueOf(zipcode.charAt(i)));
+    }
+    return "||" + returnThis + toConvert(Integer.toString(checkSum(zipcode))) + "||";
+    }
+    
+    /*public static String toZip(String code) {
+	
+      }*/
   public static void main(String[]args){
       Barcode a  = new Barcode("11547");
       System.out.println(a.getDigit());
       System.out.println(a.toString());
+      System.out.println(checkSum("12355"));
+      System.out.println(toCode("11547"));
   }
 
 }
