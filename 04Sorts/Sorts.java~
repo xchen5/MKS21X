@@ -22,17 +22,8 @@ public class Sorts{
 	  }
   }
   }
-    
-    public static void insertionSort(int[] data){
-	for(int i = 0; i<data.length; i++){
-	    if (i < i 
-	}
-	
-    }
-
-
     public static void main(String[]args) {
-	int[]a = {11,10,9,3,512,123,5123,53,42,23,2};
+	int[]a = {11,10,9,3,512};
 	selectionSort(a);
 	System.out.println(Arrays.toString(a));
     }
