@@ -24,15 +24,15 @@ public class Sorts{
   }
 
   public static void insertionSort( int []data){
-    int sub;                     // the number of items sorted so far
-    int insert;                // the item to be inserted
+    int sub;                    
+    int insert;                
     int i;
-    for (sub = 1; sub < data.length; sub++){    // Start with 1 (not 0)
+    for (sub = 1; sub < data.length; sub++){   
       insert = data[ sub ];
-      for(i = sub - 1; (i >= 0) && (data[ i ] > insert); i--){   // Smaller values are moving up
+      for(i = sub - 1; (i >= 0) && (data[ i ] > insert); i--){ 
         data[ i+1 ] = data[ i ];
       }
-      data[ i+1 ] = insert;    // Put the key in its proper location
+      data[ i+1 ] = insert;  
     }
   }
 
