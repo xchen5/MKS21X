@@ -24,23 +24,37 @@ public class Sorts{
   }
 
   public static void insertionSort( int []data){
-    int sub;                    
-    int insert;                
     int i;
-    for (sub = 1; sub < data.length; sub++){   
-      insert = data[ sub ];
-      for(i = sub - 1; (i >= 0) && (data[ i ] > insert); i--){ 
+    for (int sub = 1; sub < data.length; sub++){
+      int insert = data[ sub ];
+      for(i = sub - 1; (i >= 0) && (data[ i ] > insert); i--){
         data[ i+1 ] = data[ i ];
       }
-      data[ i+1 ] = insert;  
+      data[ i+1 ] = insert;
     }
   }
+
+  public static void bubbleSort(int[]data) {
+    int end = data.length;
+    boolean swapped = true;
+    while (swapped) {
+      swapped = false;
+      for (int i = 0; i < end - 1; i++) {
+        if (data[i] > data[i + 1]) {
+          int temp = data[i];
+          data[i] = data[i + 1];
+          data[i + 1] = temp;
+          swapped = true;
+        }
+      }
+    }
+    }
 
 
 
   public static void main(String[]args) {
     int[]a = {11,10,9,3,512,123,5123,53,42,23,2};
-    insertionSort(a);
+    bubbleSort(a);
     System.out.println(Arrays.toString(a));
   }
 }
