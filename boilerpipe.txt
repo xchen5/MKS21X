@@ -1,0 +1,1 @@
+http://boilerpipe-web.appspot.com/extract?url=<inputlink>&extractor=ArticleExtractor&output=text&extractImages=&token=
